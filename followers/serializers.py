@@ -9,7 +9,7 @@ class FollowerSerializer(serializers.ModelSerializer):
 
 
     class Meta:
-        model = Like
+        model = Follower
         fields = ['id', 'owner', 'created_at', 'followed', 'followed_name']
 
 
