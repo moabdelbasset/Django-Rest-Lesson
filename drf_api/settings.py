@@ -130,6 +130,9 @@ else:
          r"^https://.*\.gitpod\.io$",
          r"^https://.*\.app.github\.dev$",
      ]
+    CORS_ALLOWED_ORIGIN = [
+        "https://shiny-spork-75xqrw7x5vg2rr4g-3000.app.github.dev/",
+    ]
 
 CORS_ALLOW_CREDENTIALS = True
 
