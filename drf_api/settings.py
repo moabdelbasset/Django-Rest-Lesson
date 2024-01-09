@@ -75,8 +75,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['fluffy-succotash-65p6rwvpwv9f5q6w-8000.app.github.dev', 'localhost', 'my-rest-api-app-ada2446ada54.herokuapp.com']
-CSRF_TRUSTED_ORIGINS=['https://*.localhost:8000', 'https://*.app.github.dev', 'http://*.127.0.0.1:8000', 'https://*.127.0.0.1:8000']
+ALLOWED_HOSTS = ['fluffy-succotash-65p6rwvpwv9f5q6w-8000.app.github.dev', 'localhost', 'my-rest-api-app-ada2446ada54.herokuapp.com', '8000-moabdelbass-djangorestl-1pdpmv9i18k.ws-eu107.gitpod.io']
+CSRF_TRUSTED_ORIGINS=['https://*.localhost:8000', 'https://*.app.github.dev', 'http://*.127.0.0.1:8000', 'https://*.127.0.0.1:8000', 'https://3000-moabdelbasset-moments-igcsph2wvm8.ws-eu107.gitpod.io']
 
 # Application definition
 
@@ -118,7 +118,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware',
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
@@ -130,8 +129,9 @@ else:
          r"^https://.*\.gitpod\.io$",
          r"^https://.*\.app.github\.dev$",
      ]
-    CORS_ALLOWED_ORIGIN = [
-        "https://shiny-spork-75xqrw7x5vg2rr4g-3000.app.github.dev/",
+    CORS_ALLOWED_ORIGINS = [
+        "https://shiny-spork-75xqrw7x5vg2rr4g-3000.app.github.dev",
+        "https://3000-moabdelbasset-moments-igcsph2wvm8.ws-eu107.gitpod.io"
     ]
 
 CORS_ALLOW_CREDENTIALS = True
