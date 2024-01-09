@@ -68,15 +68,15 @@ ALLOWED_HOSTS = [
 
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
-    ]
-
-if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(
-        r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE
-    ).group(0)
+         os.environ.get('CLIENT_ORIGIN')
+     ]
+else:
     CORS_ALLOWED_ORIGIN_REGEXES = [
-        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+         r"^https://.*\.gitpod\.io$",
+         r"^https://.*\.app.github\.dev$",
+     ]
+    CORS_ALLOWED_ORIGIN = [
+        "https://shiny-spork-75xqrw7x5vg2rr4g-3000.app.github.dev/",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
